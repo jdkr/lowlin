@@ -1,5 +1,5 @@
 name:                lowlin
-version:             0.1.0.0
+version:             0.2.0.0
 license:             BSD3
 license-file:        LICENSE
 author:              Johannes Kropp
@@ -11,9 +11,7 @@ category:            Math, Linear Algebra
 synopsis:            Low dimensional linear algebra
 description:
     .
-    Lowlin is a library for linear algebra in vector spaces up to a dimension of 4.
-    .
-    Simple Tuples can be used as vectors and nested tuples as matrices.
+    Lowlin is a library for linear algebra in vector spaces up to a dimension of 4. Ordinary Tuples can be used as vectors and nested tuples as matrices. The functionalities are similar to that of the linear package.
 
 extra-source-files:
     CHANGELOG.md

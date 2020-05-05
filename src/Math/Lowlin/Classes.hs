@@ -10,7 +10,7 @@ module Math.Lowlin.Classes where
 
 
 -- | this class is a workaround, since it's not possible to make a typesynonym tuple an instance of functor:
-class Container c where
+class ContainerClass c where
     -- | type of single container element
     type ElemC c
     infixl 9 !
@@ -26,7 +26,7 @@ class Container c where
     toList :: c -> [ElemC c]
 
 -- | Typeclass for a vector
-class Vector v where
+class VectorClass v where
     -- | type of a single vector element
     type ElemV v
     infixl 7 *\, /*, //
@@ -52,7 +52,7 @@ class Vector v where
 
 -- TODO: implement (*|), (|*), (|/)
 -- | Typeclass for a square matrix
-class MatrixSquare m where
+class MatrixSquareClass m where
     -- | type of a single matrix element
     type ElemM m
     -- | type of a vector a matrix can multiplied with

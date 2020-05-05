@@ -195,10 +195,10 @@ instance (Fractional a) => Fractional (V4 a) where
 
 
 ------------------------------------------------------------------------------
--- Container Instances
+-- ContainerClass Instances
 
 
-instance Container (V2 a) where
+instance ContainerClass (V2 a) where
     type ElemC (V2 a) = a
     (!) (x1,x2) idx
         | idx == 0 = x1
@@ -214,7 +214,7 @@ instance Container (V2 a) where
     toList (x1,x2) = [x1,x2]
     {-# INLINE toList #-}
 
-instance Container (V3 a) where
+instance ContainerClass (V3 a) where
     type ElemC (V3 a) = a
     (!) (x1,x2,x3) idx
         | idx == 0 = x1
@@ -231,7 +231,7 @@ instance Container (V3 a) where
     toList (x1,x2,x3) = [x1,x2,x3]
     {-# INLINE toList #-}
 
-instance Container (V4 a) where
+instance ContainerClass (V4 a) where
     type ElemC (V4 a) = a
     (!) (x1,x2,x3,x4) idx
         | idx == 0 = x1
@@ -251,9 +251,9 @@ instance Container (V4 a) where
 
 
 ------------------------------------------------------------------------------
--- Vector Instances
+-- VectorClass Instances
 
-instance (Ord a, Floating a) => Vector (V2 a) where
+instance (Ord a, Floating a) => VectorClass (V2 a) where
     type ElemV (V2 a) = a
     (*\) s (x1,x2) = (s*x1,s*x2)
     {-# INLINE (*\) #-}
@@ -275,7 +275,7 @@ instance (Ord a, Floating a) => Vector (V2 a) where
     {-# INLINE sum #-}
 
 
-instance (Ord a, Floating a) => Vector (V3 a) where
+instance (Ord a, Floating a) => VectorClass (V3 a) where
     type ElemV (V3 a) = a
     (*\) s (x1,x2,x3) = (s*x1,s*x2,s*x3)
     {-# INLINE (*\) #-}
@@ -297,7 +297,7 @@ instance (Ord a, Floating a) => Vector (V3 a) where
     {-# INLINE sum #-}
 
 
-instance (Ord a, Floating a) => Vector (V4 a) where
+instance (Ord a, Floating a) => VectorClass (V4 a) where
     type ElemV (V4 a) = a
     (*\) s (x1,x2,x3,x4) = (s*x1,s*x2,s*x3,s*x4)
     {-# INLINE (*\) #-}
@@ -321,11 +321,11 @@ instance (Ord a, Floating a) => Vector (V4 a) where
 
 
 ------------------------------------------------------------------------------
--- MatrixSquare Instances
+-- MatrixSquareClass Instances
 
 
 
-instance (Ord a, Floating a) => MatrixSquare (M22 a) where
+instance (Ord a, Floating a) => MatrixSquareClass (M22 a) where
     type ElemM (M22 a) = a
     type VecM (M22 a) = V2 a
     (|.|) ((x11,x12),(x21,x22)) ((y11,y12),(y21,y22)) =
@@ -345,11 +345,11 @@ instance (Ord a, Floating a) => MatrixSquare (M22 a) where
     {-# INLINE adjugate #-}
     det ((x11,x12),(x21,x22)) = x11*x22-x12*x21
     {-# INLINE det #-}
-    inv m = cmap (//(det m)) (adjugate m) --Alternative:  inv m = cmap (//(det m)) (adjugate m)
+    inv m = cmap (//(det m)) (adjugate m)
     {-# INLINE inv #-}
 
 
-instance (Ord a, Floating a) => MatrixSquare (M33 a) where
+instance (Ord a, Floating a) => MatrixSquareClass (M33 a) where
     type ElemM (M33 a) = a
     type VecM (M33 a) = V3 a
     (|.|) (v1,v2,v3) ((y11,y12,y13),(y21,y22,y23),(y31,y32,y33)) =
@@ -389,7 +389,7 @@ instance (Ord a, Floating a) => MatrixSquare (M33 a) where
     {-# INLINE inv #-}
 
 
-instance (Ord a, Floating a) => MatrixSquare (M44 a) where
+instance (Ord a, Floating a) => MatrixSquareClass (M44 a) where
     type ElemM (M44 a) = a
     type VecM (M44 a) = V4 a
     (|.|) (v1,v2,v3,v4) ((y11,y12,y13,y14),(y21,y22,y23,y24),(y31,y32,y33,y34),(y41,y42,y43,y44)) =

@@ -7,15 +7,15 @@
 -- Portability : non-portable
 
 module Math.Lowlin
-    ( -- * Math.Lowlin.Types
-      module Math.Lowlin.Types
-      -- * Math.Lowlin.Classes
-    , module Math.Lowlin.Classes
+    (-- * Math.Lowlin.Classes
+      module Math.Lowlin.Classes
     -- * Math.Lowlin.Extra
     , module Math.Lowlin.Extra
+     -- * Math.Lowlin.Types
+    ,  module Math.Lowlin.Types
     ) where
 
 
-import Math.Lowlin.Types
 import Math.Lowlin.Classes
 import Math.Lowlin.Extra
+import Math.Lowlin.Types

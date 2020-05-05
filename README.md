@@ -1,1 +1,1 @@
-Lowlin is a library for low dimensional linear algebra
+Lowlin is a library for low dimensional linear algebra. It is used in [production](https://www.simulucis.com) and is therefore actively maintained.
