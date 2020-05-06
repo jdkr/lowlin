@@ -8,4 +8,7 @@
 
 * Renamed typeclasses to better avoid name conflicts with types from other packages
 
+## 0.2.0.1 -- 2020-05-06
+
+* Relaxed upper bound of dependency base
 
